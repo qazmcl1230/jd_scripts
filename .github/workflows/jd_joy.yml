@@ -6,7 +6,7 @@ name: jd_joy
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0,1,4,10,15,16 * * *'
+    - cron: '0 * * * *'
   watch:
     types: started
   repository_dispatch:
@@ -38,7 +38,7 @@ jobs:
       - name: '运行 【宠汪汪】'
         run: |
           cd ~/jd_scripts
-          node jd_joy.js
+          node jd_crazy_joy_coin.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
