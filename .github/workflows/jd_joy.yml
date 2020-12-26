@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/qazmcl1230/jd_scripts ~/JavaScript
+          git clone https://github.com/qazmcl1230/jd_scripts.git ~/jd_scripts
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
@@ -27,12 +27,12 @@ jobs:
       - name: npm install
         if: env.QQREAD_TIMEHD
         run: |
-          cd ~/JavaScript
+          cd ~/jd_scripts
           npm install
       - name: '运行 【企鹅读书】'
         if: env.QQREAD_TIMEHD
         run: |
-          cd ~/JavaScript
+          cd ~/jd_scripts
           node jd_crazy_joy_coin.js
         env:
 
